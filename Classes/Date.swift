@@ -51,24 +51,24 @@ extension Date {
         let components: DateComponents = calendar.dateComponents(unitFlags, from: earliest, to: latest)
         let format = (customFormat == nil || customFormat == "") ? "%i %u %c" : customFormat!
         if let year = components.year, year >= 1 {
-            return "over a year ago".localized
+            return NSLocalizedString("over a year ago", comment: "")
         }
         if let month = components.month, month >= 1 {
-            return string(forComponentValue: month, withName: "month".localized, andPlural: "months".localized, format: format)
+            return string(forComponentValue: month, withName: NSLocalizedString("month", comment: ""), andPlural: NSLocalizedString("months", comment: ""), format: format)
         }
         if let weekOfYear = components.weekOfYear, weekOfYear >= 1 {
-            return string(forComponentValue: weekOfYear, withName: "week".localized, andPlural: "weeks".localized, format: format)
+            return string(forComponentValue: weekOfYear, withName: NSLocalizedString("week", comment: ""), andPlural: NSLocalizedString("weeks", comment: ""), format: format)
         }
         if let day = components.day, day >= 1 {
-            return string(forComponentValue: day, withName: "day".localized, andPlural: "days".localized, format: format)
+            return string(forComponentValue: day, withName: NSLocalizedString("day", comment: ""), andPlural: NSLocalizedString("days", comment: ""), format: format)
         }
         if let hour = components.hour, hour >= 1 {
-            return string(forComponentValue: hour, withName: "hour".localized, andPlural: "hours".localized, format: format)
+            return string(forComponentValue: hour, withName: NSLocalizedString("hour", comment: ""), andPlural: NSLocalizedString("hours", comment: ""), format: format)
         }
         if let minute = components.minute, minute >= 1 {
-            return string(forComponentValue: minute, withName: "minute".localized, andPlural: "minutes".localized, format: format)
+            return string(forComponentValue: minute, withName: NSLocalizedString("minute", comment: ""), andPlural: NSLocalizedString("minutes", comment: ""), format: format)
         }
-        return NSLocalizedString("just now".localized, comment: "")
+        return NSLocalizedString("just now", comment: "")
     }
 
     func string(forComponentValue componentValue: Int, withName name: String, andPlural plural: String, format: String) -> String {
@@ -76,13 +76,7 @@ extension Date {
         var output: String = format
         output = output.replacingOccurrences(of: "%i", with: String(componentValue))
         output = output.replacingOccurrences(of: "%u", with: timespan)
-        output = output.replacingOccurrences(of: "%c", with: "ago".localized)
+        output = output.replacingOccurrences(of: "%c", with: NSLocalizedString("ago", comment: ""))
         return output
-    }
-}
-
-extension String {
-    var dateFromISO8601: Date? {
-        return Date.iso8601Formatter.date(from: self)
     }
 }
