@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PrettyDate-Swift"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "An Date Swift extension that returns human readable, pretty timestamps between two dates."
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  An Date Swift extension that returns human readable, pretty timestamps between two dates.
+  An Date Swift extension that returns human readable, pretty timestamps between two dates. Automatically orders dates for you so no need to worry about which is earliest. Just call one of the three category methods and you're done
                    DESC
 
   s.homepage     = "https://github.com/ilin-in/PrettyDate-Swift"
