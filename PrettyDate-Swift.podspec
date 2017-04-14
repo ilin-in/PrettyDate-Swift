@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PrettyDate-Swift"
-  s.version      = "0.0.1"
+  s.version      = "0.0.4"
   s.summary      = "An Date Swift extension that returns human readable, pretty timestamps between two dates."
 
   # This description is used to generate tags and improve search results.
